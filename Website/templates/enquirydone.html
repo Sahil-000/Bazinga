@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+<div class ="container-fluid">
+    <div class="row">
+        <div style="font-size: 18px; font-family: 'Trebuchet MS'; padding: 20px;" class="alert alert-info" role="alert">
+         Thank you {{ fname }} for submitting your query. We will get back to you within 24-48 hours.   
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <h1 style="font-family: Arial; font-size: 36px; font-weight: bold;">Your details:</h1>
+    </div>
+   <br>
+    <div style="font-size: 20px; font-family: 'Trebuchet MS'; padding: 20px; background-color:rgb(219, 219, 219); " class="row">
+        <p>
+            <b>First Name:</b> &nbsp;{{ fname }} <br>
+            <b>Last Name:</b> &nbsp;{{ lname }} <br>
+            <b>Email ID:</b> &nbsp;{{ email }} <br>
+            <b>Phone No:</b> &nbsp;{{ phone }} <br>
+            <b>Query:</b> &nbsp;{{ message }} <br>
+        
+        </p>
+    </div>
+ 
+</div>
+<br><br>
+{% endblock %}

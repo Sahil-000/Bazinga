@@ -1,0 +1,63 @@
+
+#contact1,select {
+     
+    padding: 15px; 
+    border: 1px solid rgb(231, 227, 227); 
+    border-radius: 4px; 
+    box-sizing: border-box; 
+    margin-top: 6px; 
+    margin-bottom: 10px; 
+    margin-left: 100px;
+    resize: vertical 
+  }
+
+  #form{
+    margin-left: 100px;
+  } 
+  
+ #contact1{
+      width: 70%;
+  }
+
+ select{
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 24%;
+ }
+
+ h1{
+    text-align: center;
+    background-color: rgb(206, 206, 206);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 55px;
+    font-weight: bolder;
+    color: rgb(77, 72, 72);
+    padding: 20px;
+ }
+
+  input[type=submit] {
+    background-color: rgb(65, 153, 68);
+    color: white;
+    padding: 12px 70px;
+    margin-left: 260px;
+    border: lightslategray;
+    border-radius: 5px;
+    border-style: double;
+    cursor: pointer;
+  }
+  
+
+  input[type=submit]:hover {
+    background-color: green;
+  }
+  
+ 
+  .container {
+      border: rgb(31, 29, 29);
+      border-style: double;
+    border-radius: 5px;
+    background-color: rgb(199, 194, 194);
+    padding: 20px;
+    margin-left: 370px;
+    margin-bottom: 20px;
+    width: 50%;
+  }

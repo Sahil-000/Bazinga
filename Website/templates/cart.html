@@ -1,0 +1,152 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<style>
+h1{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 55px;
+    font-weight: bolder;
+    color: rgb(77, 72, 72);
+    margin-top: 50px;
+
+ }
+
+ img{
+
+    height: 250px;
+    width: 200px;
+    object-fit: cover;
+ }
+
+ #leftrow{border: rgb(230, 230, 230) solid 1px; padding: 20px;}
+
+ #pname{
+
+font-size: 18px;
+font-family: 'Trebuchet MS';
+margin-top: 5px;
+ }
+
+ #pcategory{
+     font-size: 14px;
+     font-family: 'Trebuchet MS';
+     margin-top: 5px;
+     
+ }
+
+ #psize{
+     font-size: 16px;
+     font-family: 'Trebuchet MS';
+     margin-top: 30px;
+     
+ }
+
+ #pqty{
+
+font-size: 16px;
+ font-family: 'Trebuchet MS';
+ margin-top: 20px;
+}
+
+ #pprice{
+
+    font-size: 20px;
+     font-family: 'Trebuchet MS';
+     margin-top: 20px;
+ }
+
+ #checkout{
+    padding: 10px;
+    margin-left: 13px;
+    padding-left: 95px;
+    padding-right: 92px;
+ }
+
+ #empty{
+
+    padding: 9px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: 120px;
+
+
+ }
+
+ #total{margin-left: 30px; margin-right: 20px; padding: 16px; font-size: 15px; border: rgb(199, 198, 198) solid 2px; }
+
+ #gst{margin-left: 30px; margin-right: 20px; margin-top: -2px; padding: 16px; font-size: 15px; border: rgb(199, 198, 198) solid 2px;}
+
+ #shipping{margin-left: 30px; margin-right: 20px; margin-top: -2px; padding: 16px; font-size: 15px; border: rgb(199, 198, 198) solid 2px;}
+
+ #totalpay{margin-left: 30px; margin-right: 20px; margin-top: -2px; padding: 16px; font-size: 15px; border: rgb(199, 198, 198) solid 2px;}
+
+ 
+ 
+ </style>
+{% endblock %}
+
+{% block main %}
+
+<div class="container-fluid" style="background-color: rgb(204, 204, 204); height: 180px ;"> <h1>Shopping Cart</h1></div>
+<br><br><br>
+<div class = "container">
+    <div class="col-sm-8">
+        <div class="row">
+        <div style="margin-top: 7px;" class="col-sm-8"><b style="font-family: 'Trebuchet MS'; font-size: 18px; ">Items ({{ totalitems }})</b></div>
+
+       <div class = "col-sm-4"><a href="{{ url_for('main.emptycart') }}"> <button id="empty" type="button" class="btn btn-danger">Empty Cart</button></a></div>
+</div>
+       <br>
+        {% for product in cart.products %}
+        <div id = "leftrow"class="row">
+            <div class="col-sm-4">
+                <img src = "{{ url_for('static', filename ='img/' + product.image)}}">
+            </div>
+            <div class="col-sm-8">
+                <b id="pname">{{ product.name }}</b> <p id ="pcategory">{{ product.category }} </p> <br>
+                <p><b id = "psize">Size&nbsp;-&nbsp;{{ product.size }} </b></p>
+                <p><b id = "pqty">Qty&nbsp;-&nbsp;{{ product.qty }}</b></p> <b id="pprice"> ${{ product.price * product.qty }}</b>
+                <br><br>
+                <form method ="POST" action = "{{ url_for('main.deleteitem')}}">
+                    <input type ="hidden" name="id" id="id" value="{{ product.id }}">
+                    <input type ="submit" value="Remove Item" class="btn btn-secondary">
+                </form>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="col-sm-4" style="padding: 5px; ">
+<br><br><br>
+        <div class="row">
+            <center> <p style="font-family: Verdana, Geneva, Tahoma, sans-serif; color: rgb(94, 90, 90); font-weight: bold; font-size: 30px;">Billing Details</p></center>
+         </div>
+         <hr>
+         <div id ="total" class="row">
+            <div class="col-sm-9"> Cart Total &nbsp; </div> <div class="col-sm-3">{{ "$%.2f"|format(totalprice) }} </div>
+         </div>
+         <div id="gst" class="row">
+            <div class="col-sm-9">GST &nbsp;(18%) </div> <div class="col-sm-3">{{ "$%.2f"|format(totalprice * 0.18) }} </div>
+        </div>
+        <div id="shipping" class="row">
+            <div class="col-sm-9"> Shipping Charges &nbsp; </div> <div class="col-sm-3"> {{ "$%.2f"|format(shipping) }} </div>
+        </div>
+        <div id="totalpay" class="row">
+            <div class="col-sm-9"> <b>Total Payable</b> &nbsp; </div> <div class="col-sm-3"><b> {{ "$%.2f"|format((totalprice) + (totalprice*0.18) + shipping) }}</b> </div>
+        </div>
+        <br>
+        <div class="row">
+           <center> <a href ="{{ url_for('main.checkout') }}"> <button id="checkout" type="button" class="btn btn-primary">Proceed to Checkout</button></a></center>
+           <br>
+          
+           
+        </div>
+        <br>
+        
+        
+    </div>
+</div>
+
+{% endblock %}

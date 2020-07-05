@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/enquiry1.css') }}">
+{% endblock %}
+
+
+{% block main %}
+
+
+<h1 >Contact Us</h1>
+<br><br>
+    <div class="container">
+        <form action ="#" method="POST">
+            <br>
+          <label id="form" for="fname" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 17px;">First Name</label>
+          <br>
+          <input id="contact1" type="text" id="fname" name="firstname" placeholder="Your first name..">
+            <br>
+          <label id="form" for="lname" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 17px;">Last Name</label>
+          <br>
+          <input id="contact1" type="text" id="lname" name="lastname" placeholder="Your last name..">
+         <br>
+         <label id="form" for="email" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 17px;">Email ID</label>
+          <br>
+          <input id="contact1" type="email" id="email" name="email" placeholder="Your email id..">
+         <br>
+         <label id="form" for="phone" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 17px;">Phone No</label>
+          <br>
+          <input id="contact1" type="text" id="phone" name="phone" placeholder="Your phone no..">
+         <br>
+          <!-- <label id="form" for="state" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 17px;">State</label>
+          <br>
+         <select id="city" name="State">
+            <option value="NT">Northern Territory</option>
+            <option value="WA">Western Australia</option>
+            <option value="VIC">Victoria</option>
+            <option value="NSW">New South Wales</option>
+            <option value="QLD">Queensland</option>
+            <option value="SA">South Australia</option>
+          </select>
+         <br> -->
+          <label id="form" for="message" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 17px;">Message</label>
+          <br>
+          <input id="contact1" type="text" id="message" name="message" placeholder="Please write here.." >
+      <br><br>
+          <input type="submit" value="Submit">
+      
+        </form>
+      </div>
+
+      <br><br>
+
+{% endblock %}

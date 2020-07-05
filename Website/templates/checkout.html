@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block head %}
+<style>
+h1{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 55px;
+    font-weight: bolder;
+    color: rgb(77, 72, 72);
+    margin-top: 50px;
+
+ }
+
+#checkout{
+ margin-left: 200px; 
+ background-color: rgb(212, 203, 252);
+ padding: 40px;
+ font-family: 'Trebuchet MS';
+ font-size: 18px;
+}
+</style>
+{% endblock %}
+
+{% block main %}
+    <section>  
+        <div class="container-fluid" style="background-color: rgb(204, 204, 204); height: 180px ; "> <h1>Checkout</h1></div>
+        <div class="container">
+            
+            <div class="row">
+                <div class = "col-12">
+                    <br>
+                    <p style="font-family: 'Trebuchet MS'; font-size: 22px; text-align: center; margin-top: 20px; margin-bottom: 20px;">
+                        <u>Thank you for your interest. Please provide your details down below to complete your order. Thank you! </u>
+                    </p>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div id = "checkout" class = "col-sm-8" >
+                    {{wtf.quick_form(form)}}
+                </div>
+            </div>
+        </div>
+    </section>
+    <br><br>
+{% endblock %}

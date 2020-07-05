@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<style>
+    .btn-success{
+
+        padding-left: 30px;
+        padding-right: 30px;
+      
+     
+        margin-top: 10px;
+    }
+
+    .alert-primary{
+
+      padding-left: 10px 100px;
+    }
+
+    .btn-danger{
+
+        padding:10px;
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+
+    img{object-fit: cover;}
+
+</style>
+
+{% endblock %}
+
+
+
+
+{% block main %}
+
+<div class="container-fluid" style="background-color: rgb(223, 223, 223); padding-top:50px; padding-bottom: 50px">
+    <div class="row">
+<div class="col-sm-6">
+<img src="{{ url_for('static', filename = 'img/' + pimg) }}" style="border: black;border-radius: 40px; margin-left: 100px; border-style: groove; border-width: 10px; height: 600px; width: 600px;">
+    </div>
+    
+    <div class="col-sm-1"></div>
+
+    <div class="col-sm-5" style="border:rgb(78, 76, 76);" >
+        <h2 style="font-size: 28px; color: rgb(78, 76, 76); font-family: Arial, Helvetica, sans-serif; font-weight: 900;">{{ pname }}</h2>
+        <h4 style="font-weight: 500; color: grey; font-family: 'Trebuchet MS'; font-size: 18px;"></h4>
+        <hr>
+        <h3 style="font-size: 22px; color:rgb(78, 76, 76); font-weight: 800;">$ {{ pprice }}</h3>
+        <br>
+        <p style="font-size: 16px; font-family: Arial, Helvetica, sans-serif;">Select Size</p>
+    
+
+        <form name = "addtocart" method ='POST' action = "{{ url_for('main.addtocart') }}">
+
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+
+            <label class="btn btn-success active">
+              <input type="radio" name="options" id="option1" value="S" autocomplete="off" checked> S
+            </label>
+            <label class="btn btn-success">
+              <input type="radio" name="options" id="option2" value="M" autocomplete="off"> M
+            </label>
+            <label class="btn btn-success">
+              <input type="radio" name="options" id="option3" value="L" autocomplete="off" > L
+            </label>
+         
+          </div>
+<br><br><br>
+          <p style="font-size: 16px; font-family: Arial, Helvetica, sans-serif;">&nbsp;Quantity&nbsp;&nbsp;
+
+            <select id="qty" name ="qty" style="border-radius: 6px; padding: 5px" class="custom-select">
+                <option value="1">01</option>
+                <option value="2">02</option>
+                <option value="3">03</option>
+                <option value="4">04</option>
+                <option value="5">05</option>
+                <option value="6">06</option>
+                <option value="7">07</option>
+                <option value="8">08</option>
+                <option value="9">09</option>
+                <option value="10">10</option>
+            </select>
+          </p>
+    <br>
+
+      <input type ="hidden" name="product_id" id="product_id" value="{{ pid }}">
+     
+      <input type ="submit" name = "add" value="ADD TO CART" class="btn btn-danger">
+  </form>
+        <!-- <a href="{{ url_for('main.addtocart', pid = pid) }}" type="button" class="btn btn-danger"><b>ADD TO CART</b></a> -->
+
+<br><br><br>
+<div style="border-color: lightslategrey; border-style: groove;">
+    <p style="margin:10px ">
+        <a class="alert alert-primary" role="alert" style="padding-left:10px;padding-right: 46px;" data-toggle="collapse" 
+        href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          <b>Product Details</b>
+        </a>
+      </p>
+      <div class="collapse" id="collapseExample">
+        <div class="card card-body" style="padding: 20px;">
+            <b>Material:</b> 100% Cotton (Bio-Washed)<br> 
+           <b> Wash Care:</b> Machine wash. Wash in cold water,
+             use mild detergent, dry in shade, do not iron directly or scrub on print,
+             do not bleach, do not tumble dry. 
+             Dry on flat surface as hanging may cause measurement variations.<br>
+           <b> Standard Sizing:</b> We follow U.S. and EU standards and our sizes do not vary by more than +/- 0.5 inches.<br>
+            <br>
+            <b>Estimated Order Processing Time:</b> 24 to 48 hours<br>
+            <br>
+            <b>Please Note:</b> Colours may slightly vary depending on your screen brightness.
+        </div>
+      </div>
+</div>
+    </div>
+</div>
+</div>
+
+{% endblock %}

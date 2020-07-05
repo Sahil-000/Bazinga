@@ -1,0 +1,75 @@
+h1{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 55px;
+    font-weight: bolder;
+    color: rgb(77, 72, 72);
+    margin-top: 50px;
+
+ }
+
+ .col-sm-3{  
+    overflow: hidden;
+
+}
+
+#filter{
+
+    margin-left: 20px;
+    margin-right: -30px;
+}
+
+#img{
+    border-style: solid; border-width: 8px; border-color: lightslategray;
+    object-fit: cover;
+}
+ 
+#img:hover{
+   
+transform: scale(0.96);
+  transition:0.5s ease;
+ }
+
+ figcaption{
+
+    font-weight: bold;
+    font-size: 16px;
+    color: rgb(73, 70, 70);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+ }
+
+ #captionhr{
+     margin-top: 6px;
+ }
+
+ #sort{
+
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Lucida Sans';
+ }
+
+ #submit{
+
+    margin-top: 20px;
+    margin-left: 70px;
+    padding: 6px;
+ }
+
+ #allproducts{
+
+    font-family: 'Trebuchet MS';
+ }
+
+
+ #radio{
+
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: 500;
+    }
+
+#checkbox{
+font-weight: 500;
+
+ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+ }
